@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Hospital Dashboard - Dec 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div class="max-w-[1400px] mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">Lux Hospital Executive Dashboard</h1>
+                <p class="text-slate-500 mt-1"><i class="far fa-calendar-alt mr-2"></i>Reporting Period: December 2024</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="window.print()" class="bg-white border border-slate-200 px-4 py-2 rounded-lg shadow-sm hover:bg-slate-50 flex items-center gap-2">
+                    <i class="fas fa-download text-slate-400"></i> Export PDF
+                </button>
+                <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-sm hover:bg-indigo-700 flex items-center gap-2">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </header>
+
+        <!-- Slicer / Filters -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 mb-8 flex flex-wrap items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="bg-indigo-100 p-2 rounded-lg text-indigo-600">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold uppercase text-slate-400 block tracking-wider">Provider Slicer</label>
+                    <select id="providerSlicer" onchange="updateDashboard()" class="text-sm font-semibold text-slate-700 bg-transparent border-none focus:ring-0 cursor-pointer">
+                        <option value="All">All Providers</option>
+                        <option value="Dr. Ahmed Kamal">Dr. Ahmed Kamal</option>
+                        <option value="Dr. Sarah Miller">Dr. Sarah Miller</option>
+                        <option value="Dr. James Wilson">Dr. James Wilson</option>
+                        <option value="Dr. Elena Rossi">Dr. Elena Rossi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="h-10 w-px bg-slate-200 hidden md:block"></div>
+            <div class="flex items-center gap-3">
+                <div class="bg-emerald-100 p-2 rounded-lg text-emerald-600">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold uppercase text-slate-400 block tracking-wider">Currency</label>
+                    <span class="text-sm font-semibold text-slate-700">Egyptian Pound (EGP)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-blue-50 text-blue-600 p-3 rounded-xl"><i class="fas fa-wallet fa-lg"></i></div>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">+12.5%</span>
+                </div>
+                <h3 class="text-slate-500 text-sm font-medium">Total Revenue</h3>
+                <p id="kpi-revenue" class="text-2xl font-bold text-slate-800 mt-1">EGP 1,240,500</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-indigo-50 text-indigo-600 p-3 rounded-xl"><i class="fas fa-users fa-lg"></i></div>
+                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">+5.2%</span>
+                </div>
+                <h3 class="text-slate-500 text-sm font-medium">Total Patients</h3>
+                <p id="kpi-patients" class="text-2xl font-bold text-slate-800 mt-1">842</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-emerald-50 text-emerald-600 p-3 rounded-xl"><i class="fas fa-hand-holding-medical fa-lg"></i></div>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Stable</span>
+                </div>
+                <h3 class="text-slate-500 text-sm font-medium">Avg Revenue / Patient</h3>
+                <p id="kpi-avg" class="text-2xl font-bold text-slate-800 mt-1">EGP 1,473</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="bg-rose-50 text-rose-600 p-3 rounded-xl"><i class="fas fa-exclamation-circle fa-lg"></i></div>
+                    <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded-full">Critical</span>
+                </div>
+                <h3 class="text-slate-500 text-sm font-medium">Pending Claims</h3>
+                <p id="kpi-pending" class="text-2xl font-bold text-slate-800 mt-1">42</p>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Main Trend -->
+            <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-lg font-bold text-slate-800"><i class="fas fa-chart-area mr-2 text-indigo-500"></i> Daily Revenue Trend</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            <!-- Pie Chart -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+                <h2 class="text-lg font-bold text-slate-800 mb-6 text-left"><i class="fas fa-chart-pie mr-2 text-indigo-500"></i> Revenue by Dept</h2>
+                <div class="chart-container h-[250px]">
+                    <canvas id="deptChart"></canvas>
+                </div>
+                <div id="deptLegend" class="mt-4 grid grid-cols-2 gap-2 text-xs text-slate-500"></div>
+            </div>
+        </div>
+
+        <!-- Insights & Provider Bar -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Strategic Insights -->
+            <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-lightbulb text-amber-400"></i> Strategic Business Insights
+                </h2>
+                <div class="space-y-4 relative z-10">
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10 flex gap-4">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 mt-2 shrink-0"></div>
+                        <p class="text-sm text-slate-200">Revenue peaked in the 3rd week of December, primarily driven by Surgical consultations.</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10 flex gap-4">
+                        <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 shrink-0"></div>
+                        <p class="text-sm text-slate-200">Average revenue per patient for <span id="insight-provider">All Providers</span> is EGP 1,473.</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-xl border border-white/10 flex gap-4">
+                        <div class="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0"></div>
+                        <p class="text-sm text-slate-200">Outpatient department shows 15% growth compared to the previous month.</p>
+                    </div>
+                </div>
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
+            </div>
+            <!-- Provider Comparison -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-lg font-bold text-slate-800 mb-6"><i class="fas fa-user-md mr-2 text-indigo-500"></i> Revenue by Provider</h2>
+                <div class="chart-container">
+                    <canvas id="providerChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Report Table -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                <h2 class="text-lg font-bold text-slate-800"><i class="fas fa-table mr-2 text-indigo-500"></i> Detailed Operational Report</h2>
+                <span class="text-xs font-bold text-slate-500 bg-white border px-3 py-1 rounded-full">Showing Top 5 Records</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+                        <tr>
+                            <th class="px-6 py-4">Transaction Date</th>
+                            <th class="px-6 py-4">Provider Name</th>
+                            <th class="px-6 py-4">Department</th>
+                            <th class="px-6 py-4 text-right">Revenue (EGP)</th>
+                            <th class="px-6 py-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportTable" class="divide-y divide-slate-100 text-sm">
+                        <!-- Table rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer class="mt-8 text-center text-slate-400 text-[10px] font-medium tracking-widest uppercase">
+            Hospital Information System • Internal Use Only • Lux Dec 2024
+        </footer>
+    </div>
+
+    <script>
+        // Mock Data
+        const providers = ["Dr. Ahmed Kamal", "Dr. Sarah Miller", "Dr. James Wilson", "Dr. Elena Rossi"];
+        const departments = ["Emergency", "Surgery", "Outpatient", "Cardiology"];
+        
+        let trendChart, deptChart, providerChart;
+
+        function generateData(providerFilter) {
+            const days = Array.from({length: 31}, (_, i) => i + 1);
+            let totalRev = 0;
+            let totalPat = 0;
+            const dailyData = days.map(d => {
+                const base = providerFilter === 'All' ? 40000 : 12000;
+                const rev = base + Math.random() * 15000;
+                totalRev += rev;
+                totalPat += Math.floor(rev / 1500);
+                return Math.floor(rev);
+            });
+
+            return {
+                daily: dailyData,
+                totalRev,
+                totalPat,
+                avg: totalRev / totalPat,
+                pending: Math.floor(Math.random() * 50)
+            };
+        }
+
+        function updateDashboard() {
+            const filter = document.getElementById('providerSlicer').value;
+            const data = generateData(filter);
+
+            // Update KPIs
+            document.getElementById('kpi-revenue').innerText = `EGP ${Math.floor(data.totalRev).toLocaleString()}`;
+            document.getElementById('kpi-patients').innerText = data.totalPat.toLocaleString();
+            document.getElementById('kpi-avg').innerText = `EGP ${Math.floor(data.avg).toLocaleString()}`;
+            document.getElementById('kpi-pending').innerText = data.pending;
+            document.getElementById('insight-provider').innerText = filter;
+
+            // Update Charts
+            trendChart.data.datasets[0].data = data.daily;
+            trendChart.update();
+
+            // Update Table
+            const table = document.getElementById('reportTable');
+            table.innerHTML = '';
+            for(let i=0; i<5; i++) {
+                const pName = filter === 'All' ? providers[i%4] : filter;
+                table.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-4 text-slate-500">Dec ${20+i}, 2024</td>
+                        <td class="px-6 py-4 font-bold text-slate-700">${pName}</td>
+                        <td class="px-6 py-4"><span class="bg-slate-100 px-2 py-1 rounded text-[10px] font-bold text-slate-500">${departments[i%4]}</span></td>
+                        <td class="px-6 py-4 text-right font-bold text-indigo-600">EGP ${Math.floor(1500 + Math.random()*5000).toLocaleString()}</td>
+                        <td class="px-6 py-4"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-[10px] font-bold">Paid</span></td>
+                    </tr>
+                `;
+            }
+        }
+
+        window.onload = function() {
+            const ctxTrend = document.getElementById('trendChart').getContext('2d');
+            trendChart = new Chart(ctxTrend, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 31}, (_, i) => i + 1),
+                    datasets: [{
+                        label: 'Daily Revenue',
+                        data: [],
+                        borderColor: '#4f46e5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.05)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { display: false }, ticks: { font: { size: 10 } } },
+                        x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+                    }
+                }
+            });
+
+            const ctxDept = document.getElementById('deptChart').getContext('2d');
+            deptChart = new Chart(ctxDept, {
+                type: 'doughnut',
+                data: {
+                    labels: departments,
+                    datasets: [{
+                        data: [35, 25, 20, 20],
+                        backgroundColor: ['#4f46e5', '#10b981', '#f59e0b', '#ef4444'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '70%'
+                }
+            });
+
+            const ctxProv = document.getElementById('providerChart').getContext('2d');
+            providerChart = new Chart(ctxProv, {
+                type: 'bar',
+                data: {
+                    labels: providers,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [450000, 380000, 310000, 290000],
+                        backgroundColor: '#4f46e5',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { display: false } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            updateDashboard();
+        }
+    </script>
+</body>
+</html>
