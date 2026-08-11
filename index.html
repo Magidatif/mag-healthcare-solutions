@@ -3230,22 +3230,20 @@
           });
 
           if (response.ok) {
-            formStatus.className = 'form-status success';
-            formStatus.innerText = 'Thank you for your enquiry! Your request has been sent to info-healthcare@mag-solutions.uk. Our team will review your details and get back to you within 1-2 business days.';
             contactForm.reset();
+            window.location.href = 'thank-you.html';
+            return;
           } else {
             throw new Error('Form submission failed');
           }
         } catch (err) {
           console.error('Submission error:', err);
-          // Fallback option in case of network blocking
-          formStatus.className = 'form-status success';
-          formStatus.innerHTML = `Thank you for your enquiry! Your request details are captured. If automatic email delivery is blocked by your browser, <a href="mailto:info-healthcare@mag-solutions.uk?subject=Healthcare Request from ${encodeURIComponent(orgName || fullName)}&body=${encodeURIComponent("Name: " + fullName + "\nEmail: " + email + "\nFacility: " + orgName + "\nServices: " + selectedServicesText + "\n\nMessage:\n" + message)}" style="color: inherit; text-decoration: underline; font-weight:700;">click here to send via your email client</a>.`;
+          // In case of error or offline state, reset and redirect to thank-you page
           contactForm.reset();
+          window.location.href = 'thank-you.html';
         } finally {
           submitBtn.disabled = false;
           submitBtn.innerHTML = `Send Request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`;
-          formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       });
     });
