@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -1231,6 +1231,206 @@
       min-height: 130px;
     }
 
+    /* ─── DATA SECURITY & COMPLIANCE ──────────────────────── */
+    .compliance-badge-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .comp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+
+    .comp-badge svg { color: var(--color-primary); flex-shrink: 0; }
+
+    .comp-badge:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .compliance-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .compliance-pillars { grid-template-columns: 1fr; }
+    }
+
+    .comp-pillar {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2xl);
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+      position: relative;
+    }
+
+    .comp-pillar:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .comp-pillar--featured {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+      box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-md);
+    }
+
+    .comp-pillar--featured:hover {
+      box-shadow: 0 0 0 1px var(--color-primary), var(--shadow-lg);
+    }
+
+    .comp-pillar__featured-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.85rem;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    .comp-pillar__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comp-pillar__icon--teal {
+      background: rgba(0, 107, 114, 0.12);
+      color: var(--color-primary);
+    }
+
+    .comp-pillar__icon--gold {
+      background: rgba(192, 139, 0, 0.12);
+      color: var(--color-accent);
+    }
+
+    .comp-pillar__icon--blue {
+      background: rgba(37, 99, 235, 0.10);
+      color: #2563eb;
+    }
+
+    [data-theme="dark"] .comp-pillar__icon--blue { color: #60a5fa; background: rgba(96,165,250,0.12); }
+
+    .comp-pillar__title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .comp-pillar__desc {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    .comp-pillar__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .comp-pillar__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    .comp-pillar__list li svg {
+      color: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .comp-pillar__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      margin-top: auto;
+      transition: gap var(--transition), opacity var(--transition);
+    }
+
+    .comp-pillar__link:hover { gap: 0.55rem; opacity: 0.8; }
+
+    .compliance-trust-bar {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #004f55 100%);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .compliance-trust-bar svg { color: rgba(255,255,255,0.7); flex-shrink: 0; margin-top: 0.15rem; }
+
+    .compliance-trust-bar p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .compliance-trust-bar strong { color: #fff; }
+
+    .trust-bar__link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7efff5;
+      text-decoration: none;
+      white-space: nowrap;
+      align-self: center;
+      transition: color var(--transition);
+    }
+
+    .trust-bar__link:hover { color: #fff; }
+
+    /* ─── TOOLS ─────────────────────────────────────────────── */
+
     /* Form hint text */
     .form-hint {
       font-size: 0.72rem;
@@ -2179,7 +2379,186 @@
       </div>
     </section>
 
-    <!-- TOOLS -->
+    <!-- ═══════════════════════════════════════════════════════
+         DATA SECURITY & COMPLIANCE
+    ════════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="compliance" aria-labelledby="compliance-title">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Data Security &amp; Compliance</span>
+          <h2 class="section__title" id="compliance-title">Your Data Is Safe With Us</h2>
+          <p class="section__desc">Before sharing any claims data or patient records, you deserve full transparency about
+            how we protect, anonymise, and secure every data point we handle.</p>
+        </div>
+
+        <!-- Compliance badge strip -->
+        <div class="compliance-badge-strip reveal">
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>HIPAA Compliant</span>
+          </div>
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>GDPR / UK GDPR</span>
+          </div>
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>AES-256 Encryption</span>
+          </div>
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>TLS 1.2+ In Transit</span>
+          </div>
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Zero PHI Retention</span>
+          </div>
+          <div class="comp-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>BAA Available</span>
+          </div>
+        </div>
+
+        <!-- Three pillars -->
+        <div class="compliance-pillars reveal reveal-delay-1">
+
+          <!-- Pillar 1: HIPAA / GDPR -->
+          <article class="comp-pillar">
+            <div class="comp-pillar__icon comp-pillar__icon--teal">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="comp-pillar__title">HIPAA &amp; GDPR Compliance</h3>
+            <p class="comp-pillar__desc">We operate in full alignment with HIPAA (45 CFR Parts 160 &amp; 164) and
+              GDPR / UK GDPR regulations. Every engagement involving Protected Health Information (PHI) is governed by a
+              signed <strong>Business Associate Agreement (BAA)</strong>, defining strict limits on data access,
+              permitted use, and breach notification timelines.</p>
+            <ul class="comp-pillar__list">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Signed BAA required before any PHI is shared
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Breach notification within 60 days (HIPAA) / 72 hrs (GDPR)
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Annual risk assessments &amp; workforce privacy training
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                GDPR Data Subject Rights fulfilled within 30 days
+              </li>
+            </ul>
+            <a href="privacy-policy.html" class="comp-pillar__link">
+              Read Privacy Policy
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+          <!-- Pillar 2: Data Anonymization -->
+          <article class="comp-pillar comp-pillar--featured">
+            <div class="comp-pillar__icon comp-pillar__icon--gold">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <div class="comp-pillar__featured-badge">Core Practice</div>
+            <h3 class="comp-pillar__title">Data Anonymisation &amp; PHI Protection</h3>
+            <p class="comp-pillar__desc">All analytics, dashboards, and reports are built exclusively on
+              <strong>de-identified, anonymised datasets</strong>. Patient identifiers (name, ID, date of birth,
+              address) are stripped at the data-ingestion stage and never appear in any output or visualisation.</p>
+            <ul class="comp-pillar__list">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                18 HIPAA Safe Harbour identifiers removed before analysis
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Aggregated KPIs — no individual-level patient data in reports
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Role-based access controls limit who sees what
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Full audit trail of data access and transformations
+              </li>
+            </ul>
+          </article>
+
+          <!-- Pillar 3: Secure Cloud Infrastructure -->
+          <article class="comp-pillar">
+            <div class="comp-pillar__icon comp-pillar__icon--blue">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h3 class="comp-pillar__title">Secure Cloud Infrastructure</h3>
+            <p class="comp-pillar__desc">All data processing and storage occurs within
+              <strong>ISO 27001-aligned cloud environments</strong> with enterprise-grade security controls. Data never
+              transits through unsecured channels or resides on unmanaged local devices.</p>
+            <ul class="comp-pillar__list">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                AES-256 encryption at rest; TLS 1.2+ in transit
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Multi-factor authentication (MFA) on all systems
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Automated backups with geo-redundant storage
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Critical security patches applied within 72 hours
+              </li>
+            </ul>
+            <a href="service-level-agreement.html" class="comp-pillar__link">
+              View SLA Commitments
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </article>
+
+        </div><!-- /pillars -->
+
+        <!-- Bottom trust bar -->
+        <div class="compliance-trust-bar reveal reveal-delay-1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <p>All client engagements are governed by a signed <strong>Non-Disclosure Agreement (NDA)</strong> and, where
+            applicable, a <strong>Business Associate Agreement (BAA)</strong>. Data shared for analysis is handled
+            exclusively within the agreed scope and deleted upon project completion unless otherwise agreed in
+            writing.</p>
+          <a href="privacy-policy.html" class="trust-bar__link">Full Privacy Policy &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
     <section class="section section--alt" id="tools" aria-labelledby="tools-title">
       <div class="container--narrow">
         <div class="section__header">
