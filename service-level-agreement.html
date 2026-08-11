@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Level Agreement – MAG Healthcare Solutions</title>
+  <meta name="description" content="MAG Healthcare Solutions Service Level Agreement – Our commitments on service availability, response times, and performance standards.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300..800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{--color-bg:#f8fafc;--color-surface:#ffffff;--color-surface-2:#f1f5f9;--color-divider:#e2e8f0;--color-border:#cbd5e1;--color-text:#0f172a;--color-text-muted:#475569;--color-text-faint:#94a3b8;--color-primary:#006b72;--color-primary-hover:#005960;--color-primary-highlight:rgba(0,107,114,0.12);--color-accent:#c08b00;--radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-2xl:1.5rem;--font-display:'Satoshi','Tajawal','Cairo',sans-serif;--font-body:'Satoshi','Cairo','Tajawal',sans-serif;--shadow-md:0 10px 25px -5px rgba(15,23,42,0.05);--transition:200ms cubic-bezier(0.16,1,0.3,1);}
+    [data-theme="dark"]{--color-bg:#0b0f17;--color-surface:#121824;--color-surface-2:#1e293b;--color-divider:#1e293b;--color-border:#334155;--color-text:#f8fafc;--color-text-muted:#94a3b8;--color-text-faint:#475569;--color-primary:#4db8bf;--color-primary-hover:#63ccd3;--color-primary-highlight:rgba(77,184,191,0.15);--color-accent:#e8a800;--shadow-md:0 10px 30px rgba(0,0,0,0.4);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);line-height:1.75;font-size:1rem;transition:background var(--transition),color var(--transition);}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--color-surface);border-bottom:1px solid var(--color-divider);box-shadow:var(--shadow-md);}
+    .navbar__inner{max-width:960px;margin:0 auto;padding:0.875rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+    .navbar__logo{display:flex;align-items:center;gap:0.625rem;text-decoration:none;}
+    .navbar__logo img{height:42px;width:42px;border-radius:50%;object-fit:contain;background:#fff;border:1px solid var(--color-border);padding:2px;}
+    .navbar__logo-text{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--color-primary);}
+    .navbar__logo-sub{font-size:0.7rem;color:var(--color-text-muted);}
+    .navbar__back{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.875rem;font-weight:500;color:var(--color-primary);text-decoration:none;padding:0.45rem 1rem;border:1px solid var(--color-primary);border-radius:var(--radius-sm);transition:all var(--transition);}
+    .navbar__back:hover{background:var(--color-primary);color:#fff;}
+    .theme-btn{background:none;border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:0.4rem 0.55rem;cursor:pointer;color:var(--color-text-muted);display:flex;align-items:center;transition:all var(--transition);}
+    .theme-btn:hover{border-color:var(--color-primary);color:var(--color-primary);}
+    .icon-moon{display:block;}.icon-sun{display:none;}
+    [data-theme="dark"] .icon-moon{display:none;}[data-theme="dark"] .icon-sun{display:block;}
+    .legal-hero{background:linear-gradient(135deg,#3d1a72 0%,#2a1155 60%,#180a38 100%);color:#fff;padding:4rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden;}
+    .legal-hero__badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:9999px;padding:0.35rem 1rem;font-size:0.8rem;font-weight:500;margin-bottom:1.25rem;backdrop-filter:blur(4px);}
+    .legal-hero h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;margin-bottom:0.75rem;}
+    .legal-hero p{font-size:1rem;opacity:0.85;max-width:580px;margin:0 auto;}
+    .compliance-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;margin-top:1.75rem;}
+    .compliance-badge{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius-sm);padding:0.35rem 0.85rem;font-size:0.8rem;font-weight:600;backdrop-filter:blur(4px);}
+    .legal-wrapper{max-width:800px;margin:0 auto;padding:3rem 1.5rem 5rem;}
+    .toc{background:var(--color-surface);border:1px solid var(--color-divider);border-left:4px solid #3d1a72;border-radius:var(--radius-lg);padding:1.5rem 1.75rem;margin-bottom:2.5rem;box-shadow:var(--shadow-md);}
+    [data-theme="dark"] .toc{border-left-color:var(--color-primary);}
+    .toc h2{font-family:var(--font-display);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);margin-bottom:0.75rem;}
+    .toc ol{list-style:none;counter-reset:toc-counter;display:grid;grid-template-columns:1fr 1fr;gap:0.3rem 1.5rem;}
+    @media(max-width:500px){.toc ol{grid-template-columns:1fr;}}
+    .toc li{counter-increment:toc-counter;display:flex;align-items:baseline;gap:0.4rem;}
+    .toc li::before{content:counter(toc-counter,decimal-leading-zero)".";font-size:0.72rem;font-weight:700;color:var(--color-primary);flex-shrink:0;}
+    .toc a{font-size:0.875rem;color:var(--color-text-muted);text-decoration:none;transition:color var(--transition);}
+    .toc a:hover{color:var(--color-primary);}
+    .legal-section{margin-bottom:3rem;scroll-margin-top:90px;}
+    .section-header{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--color-divider);}
+    .section-number{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:var(--color-primary-highlight);color:var(--color-primary);font-size:0.8rem;font-weight:700;flex-shrink:0;}
+    .legal-section h2{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-text);}
+    .legal-section p{color:var(--color-text-muted);margin-bottom:0.75rem;}
+    .legal-section ul,.legal-section ol{color:var(--color-text-muted);padding-left:1.5rem;margin-bottom:0.75rem;}
+    .legal-section li{margin-bottom:0.4rem;}
+    .legal-section h3{font-family:var(--font-display);font-size:0.95rem;font-weight:600;color:var(--color-text);margin:1.25rem 0 0.5rem;}
+    .info-box{border-radius:var(--radius-lg);padding:1rem 1.25rem;margin:1rem 0;display:flex;gap:0.75rem;align-items:flex-start;}
+    .info-box--blue{background:rgba(0,107,114,0.08);border:1px solid rgba(0,107,114,0.2);}
+    .info-box--amber{background:rgba(192,139,0,0.08);border:1px solid rgba(192,139,0,0.2);}
+    .info-box--green{background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.2);}
+    .info-box__icon{flex-shrink:0;margin-top:0.1rem;}
+    .info-box__icon--blue{color:var(--color-primary);}
+    .info-box__icon--amber{color:var(--color-accent);}
+    .info-box__icon--green{color:#16a34a;}
+    .info-box p{color:var(--color-text-muted);margin:0;font-size:0.9rem;}
+    .info-box strong{color:var(--color-text);}
+    .data-table{width:100%;border-collapse:collapse;font-size:0.875rem;margin:1rem 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
+    .data-table th{background:var(--color-primary);color:#fff;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+    .data-table td{padding:0.7rem 1rem;border-bottom:1px solid var(--color-divider);color:var(--color-text-muted);background:var(--color-surface);}
+    .data-table tr:last-child td{border-bottom:none;}
+    .data-table tr:hover td{background:var(--color-surface-2);}
+    .sla-tier{background:var(--color-surface);border:1px solid var(--color-divider);border-radius:var(--radius-xl);padding:1.25rem;margin-bottom:1rem;display:flex;gap:1rem;align-items:flex-start;box-shadow:var(--shadow-md);transition:box-shadow var(--transition);}
+    .sla-tier:hover{box-shadow:0 12px 30px rgba(0,0,0,0.1);}
+    .sla-tier__badge{flex-shrink:0;padding:0.4rem 0.75rem;border-radius:var(--radius-full);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+    .badge-standard{background:rgba(0,107,114,0.12);color:var(--color-primary);}
+    .badge-professional{background:rgba(192,139,0,0.12);color:var(--color-accent);}
+    .badge-enterprise{background:rgba(61,26,114,0.12);color:#7c3aed;}
+    [data-theme="dark"] .badge-enterprise{background:rgba(124,58,237,0.2);color:#a78bfa;}
+    .sla-tier__content h4{font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--color-text);margin-bottom:0.25rem;}
+    .sla-tier__content p{font-size:0.85rem;color:var(--color-text-muted);margin:0;}
+    .effective-bar{display:flex;align-items:center;gap:0.5rem;background:var(--color-surface-2);border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:0.65rem 1rem;font-size:0.82rem;color:var(--color-text-muted);margin-bottom:2rem;}
+    .effective-bar svg{color:var(--color-primary);flex-shrink:0;}
+    .effective-bar strong{color:var(--color-text);}
+    .contact-card{background:linear-gradient(135deg,#3d1a72 0%,#2a1155 100%);border-radius:var(--radius-2xl);padding:2rem;color:#fff;margin-top:2.5rem;display:flex;flex-direction:column;gap:0.5rem;}
+    .contact-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;}
+    .contact-card p{opacity:0.85;font-size:0.9rem;}
+    .contact-card a{color:#c4b5fd;font-weight:500;}
+    .legal-footer{background:var(--color-surface);border-top:1px solid var(--color-divider);padding:1.5rem;text-align:center;font-size:0.8rem;color:var(--color-text-faint);}
+    .legal-footer a{color:var(--color-primary);text-decoration:none;}
+    .legal-footer a:hover{text-decoration:underline;}
+    .uptime-bar{display:flex;gap:0.5rem;margin:1rem 0;}
+    .uptime-segment{height:8px;border-radius:4px;flex:1;}
+    .uptime-segment--green{background:#16a34a;}
+    .uptime-segment--amber{background:#c08b00;}
+    .uptime-segment--red{background:#dc2626;}
+    @media(max-width:600px){.radius-full{border-radius:var(--radius-lg);}}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="public%20logo.png" alt="MAG Healthcare Logo">
+        <div>
+          <div class="navbar__logo-text">MAG Healthcare</div>
+          <div class="navbar__logo-sub">Solutions</div>
+        </div>
+      </a>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <button class="theme-btn" id="themeToggleBtn" aria-label="Toggle dark/light mode">
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="index.html" class="navbar__back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="legal-hero">
+    <div class="legal-hero__badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Legal Document
+    </div>
+    <h1>Service Level Agreement</h1>
+    <p>Our commitments to service availability, quality, response times, and performance standards for healthcare clients.</p>
+    <div class="compliance-badges">
+      <span class="compliance-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Performance Guaranteed</span>
+      <span class="compliance-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> HIPAA Aligned</span>
+      <span class="compliance-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Last Updated: August 2026</span>
+    </div>
+  </header>
+
+  <main class="legal-wrapper">
+    <div class="effective-bar">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span><strong>Effective Date:</strong> 1 August 2026 &nbsp;|&nbsp; <strong>Version:</strong> 1.0 &nbsp;|&nbsp; <strong>Review Cycle:</strong> Annual</span>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#definitions">Definitions</a></li>
+        <li><a href="#tiers">Service Tiers</a></li>
+        <li><a href="#availability">Availability Targets</a></li>
+        <li><a href="#response">Response Times</a></li>
+        <li><a href="#delivery">Deliverable Standards</a></li>
+        <li><a href="#security-sla">Security Commitments</a></li>
+        <li><a href="#reporting">Reporting</a></li>
+        <li><a href="#incidents">Incident Management</a></li>
+        <li><a href="#exclusions">Exclusions</a></li>
+        <li><a href="#remedies">Service Credits</a></li>
+        <li><a href="#review">SLA Review</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="scope" class="legal-section">
+      <div class="section-header"><span class="section-number">1</span><h2>Scope</h2></div>
+      <p>This Service Level Agreement ("SLA") applies to all professional services provided by MAG Healthcare Solutions to contracted clients. It defines the standards, metrics, and commitments governing our analytical, consulting, and technology delivery services in the healthcare sector.</p>
+      <p>This SLA is incorporated by reference into all signed service agreements and statements of work. In the event of a conflict, the specific terms of the signed service agreement shall prevail.</p>
+    </section>
+
+    <section id="definitions" class="legal-section">
+      <div class="section-header"><span class="section-number">2</span><h2>Definitions</h2></div>
+      <ul>
+        <li><strong>Business Hours:</strong> Monday to Friday, 09:00 – 17:00 GMT/BST, excluding UK public holidays</li>
+        <li><strong>Critical Incident:</strong> A service disruption causing complete inability to access contracted deliverables or a data security breach</li>
+        <li><strong>High Priority:</strong> A significant issue materially impacting service functionality, without a viable workaround</li>
+        <li><strong>Medium Priority:</strong> A partial service degradation with an available workaround</li>
+        <li><strong>Low Priority:</strong> A minor issue, general question, or enhancement request</li>
+        <li><strong>Resolution Time:</strong> Time from incident acknowledgement to confirmed resolution</li>
+        <li><strong>Uptime:</strong> Percentage of time contracted digital deliverables are accessible and functional</li>
+      </ul>
+    </section>
+
+    <section id="tiers" class="legal-section">
+      <div class="section-header"><span class="section-number">3</span><h2>Service Tiers</h2></div>
+      <p>We offer three service tiers to accommodate different client needs:</p>
+      <div class="sla-tier">
+        <span class="sla-tier__badge badge-standard">Standard</span>
+        <div class="sla-tier__content">
+          <h4>Standard Engagement</h4>
+          <p>Project-based analytics and consulting with standard response times and business hours support.</p>
+        </div>
+      </div>
+      <div class="sla-tier">
+        <span class="sla-tier__badge badge-professional">Professional</span>
+        <div class="sla-tier__content">
+          <h4>Professional Retainer</h4>
+          <p>Ongoing analytics services with priority support, dedicated account management, and monthly performance reviews.</p>
+        </div>
+      </div>
+      <div class="sla-tier">
+        <span class="sla-tier__badge badge-enterprise">Enterprise</span>
+        <div class="sla-tier__content">
+          <h4>Enterprise Partnership</h4>
+          <p>Full-service partnership with 24/7 critical support, custom SLA terms, a dedicated team, and quarterly strategic reviews.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="availability" class="legal-section">
+      <div class="section-header"><span class="section-number">4</span><h2>Availability Targets</h2></div>
+      <p>For contracted digital deliverables (dashboards, reporting portals):</p>
+      <table class="data-table">
+        <thead><tr><th>Tier</th><th>Monthly Uptime Target</th><th>Max Planned Downtime / Month</th></tr></thead>
+        <tbody>
+          <tr><td>Standard</td><td>99.0%</td><td>7.3 hours</td></tr>
+          <tr><td>Professional</td><td>99.5%</td><td>3.6 hours</td></tr>
+          <tr><td>Enterprise</td><td>99.9%</td><td>43.8 minutes</td></tr>
+        </tbody>
+      </table>
+      <p>Planned maintenance windows (typically 22:00–02:00 GMT on weekends) are excluded from uptime calculations and will be communicated at least 72 hours in advance.</p>
+    </section>
+
+    <section id="response" class="legal-section">
+      <div class="section-header"><span class="section-number">5</span><h2>Response &amp; Resolution Times</h2></div>
+      <table class="data-table">
+        <thead><tr><th>Priority</th><th>Standard – Response / Resolution</th><th>Professional – Response / Resolution</th><th>Enterprise – Response / Resolution</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Critical</strong></td><td>4h / 24h</td><td>2h / 8h</td><td>1h / 4h</td></tr>
+          <tr><td><strong>High</strong></td><td>8h / 3 days</td><td>4h / 1 day</td><td>2h / 8h</td></tr>
+          <tr><td><strong>Medium</strong></td><td>1 day / 5 days</td><td>8h / 3 days</td><td>4h / 2 days</td></tr>
+          <tr><td><strong>Low</strong></td><td>2 days / 10 days</td><td>1 day / 5 days</td><td>8h / 3 days</td></tr>
+        </tbody>
+      </table>
+      <p>Response times are measured from the time of incident report during business hours. Enterprise critical issues are handled 24/7.</p>
+    </section>
+
+    <section id="delivery" class="legal-section">
+      <div class="section-header"><span class="section-number">6</span><h2>Deliverable Quality Standards</h2></div>
+      <p>All analytical deliverables produced by MAG Healthcare Solutions adhere to the following quality standards:</p>
+      <ul>
+        <li><strong>Accuracy:</strong> Data outputs are validated against source systems before delivery; discrepancies exceeding 0.1% are investigated and corrected</li>
+        <li><strong>Completeness:</strong> Dashboards and reports include all data fields agreed in the scope of work</li>
+        <li><strong>Timeliness:</strong> Routine reports delivered by the agreed schedule; delays exceeding 10% of the agreed timeline will be escalated</li>
+        <li><strong>Auditability:</strong> All data transformations are documented and reproducible</li>
+        <li><strong>Accessibility:</strong> Dashboards tested across modern browsers (Chrome, Firefox, Edge, Safari)</li>
+      </ul>
+    </section>
+
+    <section id="security-sla" class="legal-section">
+      <div class="section-header"><span class="section-number">7</span><h2>Security Commitments</h2></div>
+      <div class="info-box info-box--blue">
+        <span class="info-box__icon info-box__icon--blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <p>We commit to maintaining security controls appropriate to the sensitivity of healthcare data, including HIPAA and GDPR requirements.</p>
+      </div>
+      <ul>
+        <li>Annual independent security risk assessments</li>
+        <li>Immediate notification to client within 24 hours of confirmed data breach discovery</li>
+        <li>Regulatory notification (HIPAA: 60 days; GDPR/UK GDPR: 72 hours to supervisory authority) as applicable</li>
+        <li>Encryption of all client data in transit and at rest</li>
+        <li>Access logs retained for a minimum of 12 months</li>
+        <li>Security patches applied within 30 days of release (critical patches within 72 hours)</li>
+      </ul>
+    </section>
+
+    <section id="reporting" class="legal-section">
+      <div class="section-header"><span class="section-number">8</span><h2>Reporting &amp; Transparency</h2></div>
+      <table class="data-table">
+        <thead><tr><th>Report Type</th><th>Standard</th><th>Professional</th><th>Enterprise</th></tr></thead>
+        <tbody>
+          <tr><td>Uptime / Performance Report</td><td>Quarterly</td><td>Monthly</td><td>Monthly</td></tr>
+          <tr><td>Incident Summary</td><td>On request</td><td>Monthly</td><td>Monthly</td></tr>
+          <tr><td>Security Posture Review</td><td>Annual</td><td>Semi-annual</td><td>Quarterly</td></tr>
+          <tr><td>Strategic Review Meeting</td><td>Annual</td><td>Quarterly</td><td>Quarterly</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="incidents" class="legal-section">
+      <div class="section-header"><span class="section-number">9</span><h2>Incident Management</h2></div>
+      <h3>Reporting an Incident</h3>
+      <p>Incidents should be reported to us by email at <strong>mag.healthcare.info@gmail.com</strong> with the subject line <em>"INCIDENT – [Priority Level] – [Brief Description]"</em>. Please include: affected service, time of first occurrence, impact description, and any error messages.</p>
+      <h3>Incident Classification</h3>
+      <p>Upon receipt, incidents are classified by our team according to the priority matrix in Section 5. The client will receive acknowledgement within the response time for the assigned priority level.</p>
+      <h3>Escalation</h3>
+      <p>If an incident is not resolved within the target resolution time, it will be automatically escalated to senior management. Clients may also request escalation at any time by contacting their account manager directly.</p>
+    </section>
+
+    <section id="exclusions" class="legal-section">
+      <div class="section-header"><span class="section-number">10</span><h2>Exclusions</h2></div>
+      <p>The following are excluded from SLA targets and uptime calculations:</p>
+      <ul>
+        <li>Scheduled maintenance windows (communicated at least 72 hours in advance)</li>
+        <li>Force majeure events (natural disasters, pandemics, government actions)</li>
+        <li>Client-side infrastructure failures or network outages</li>
+        <li>Third-party service disruptions outside our control (e.g., cloud provider outages)</li>
+        <li>Incidents caused by client actions, misuse, or changes made without our approval</li>
+        <li>Free or trial services not covered by a paid agreement</li>
+      </ul>
+    </section>
+
+    <section id="remedies" class="legal-section">
+      <div class="section-header"><span class="section-number">11</span><h2>Service Credits</h2></div>
+      <p>In the event of SLA breach (excluding exclusions in Section 10), clients are entitled to service credits as follows:</p>
+      <table class="data-table">
+        <thead><tr><th>Uptime Achieved (Monthly)</th><th>Credit (% of Monthly Fee)</th></tr></thead>
+        <tbody>
+          <tr><td>Below target, above 98.5%</td><td>5%</td></tr>
+          <tr><td>98.5% – 97.0%</td><td>10%</td></tr>
+          <tr><td>97.0% – 95.0%</td><td>20%</td></tr>
+          <tr><td>Below 95.0%</td><td>30%</td></tr>
+        </tbody>
+      </table>
+      <div class="info-box info-box--amber">
+        <span class="info-box__icon info-box__icon--amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+        <p>Credits must be claimed within 30 days of the month in which the SLA breach occurred. Credits are applied to future invoices and are not redeemable for cash. Total credits in any month shall not exceed 30% of the monthly fee.</p>
+      </div>
+    </section>
+
+    <section id="review" class="legal-section">
+      <div class="section-header"><span class="section-number">12</span><h2>SLA Review</h2></div>
+      <p>This SLA is reviewed annually or upon significant changes to the contracted services. Either party may request a review at any time. Any amendments to this SLA must be agreed in writing and signed by authorised representatives of both parties.</p>
+    </section>
+
+    <section id="contact" class="legal-section">
+      <div class="section-header"><span class="section-number">13</span><h2>Contact</h2></div>
+      <p>For SLA-related enquiries, incident reporting, or to request a service tier upgrade:</p>
+      <div class="contact-card">
+        <h3>MAG Healthcare Solutions — Service Delivery</h3>
+        <p>Email: <a href="mailto:mag.healthcare.info@gmail.com">mag.healthcare.info@gmail.com</a></p>
+        <p>Incidents: Subject line <em>"INCIDENT – [Priority] – [Description]"</em></p>
+        <p>SLA Enquiries: Subject line <em>"SLA Enquiry – [Your Name]"</em></p>
+      </div>
+    </section>
+
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+      <a href="privacy-policy.html" style="color:var(--color-primary);font-size:0.875rem;">&larr; Privacy Policy</a>
+      <a href="terms-of-use.html" style="color:var(--color-primary);font-size:0.875rem;">&larr; Terms of Use</a>
+    </div>
+  </main>
+
+  <footer class="legal-footer">
+    <p>2026 MAG Healthcare Solutions. All rights reserved. &nbsp;|&nbsp;
+      <a href="index.html">Home</a> &nbsp;|&nbsp;
+      <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="terms-of-use.html">Terms of Use</a> &nbsp;|&nbsp;
+      <a href="service-level-agreement.html">Service Level Agreement</a>
+    </p>
+  </footer>
+  <script>
+    const btn = document.getElementById('themeToggleBtn');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('mag-theme');
+    if (saved) html.setAttribute('data-theme', saved);
+    btn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('mag-theme', next);
+    });
+  </script>
+</body>
+</html>
