@@ -1226,6 +1226,179 @@
       transform: translateY(-1px);
     }
 
+    /* --- ABOUT US & LEADERSHIP --- */
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-story-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-story-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2xl);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-story-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .about-story-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    .about-footprint-card {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #00464c 100%);
+      color: #fff;
+      border-radius: var(--radius-2xl);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-footprint-card::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -20%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .footprint-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+      align-self: flex-start;
+    }
+
+    .footprint-locations {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .footprint-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .footprint-flag {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .footprint-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .footprint-info p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.45;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .leadership-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2xl);
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .leadership-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+
+    .leadership-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-xl);
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .leadership-card__tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .leadership-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+
+    .leadership-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
     .form-group textarea {
       resize: vertical;
       min-height: 130px;
@@ -1824,6 +1997,7 @@
         <nav class="navbar__nav" aria-label="Main Navigation">
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
+          <a href="#about">About Us</a>
           <a href="#why-us">Why Us</a>
           <a href="#tools">Tools</a>
           <a href="#contact">Contact</a>
@@ -1858,6 +2032,7 @@
     <nav class="mobile-nav__links">
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
+      <a href="#about">About Us</a>
       <a href="#why-us">Why Us</a>
       <a href="#tools">Tools</a>
       <a href="#contact">Contact</a>
@@ -2309,6 +2484,83 @@
 
         </div>
       </div>
+    <!-- ABOUT US & LEADERSHIP -->
+    <section class="section section--alt" id="about" aria-labelledby="about-title">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__eyebrow">About Us &amp; Leadership</span>
+          <h2 class="section__title" id="about-title">Bridging Operational Expertise with Data Intelligence</h2>
+          <p class="section__desc">Founded to bridge the gap between hospital-floor clinical operations and advanced revenue analytics — turning operational data into sustained financial performance.</p>
+        </div>
+
+        <!-- Vision & Footprint Row -->
+        <div class="about-story-grid reveal reveal-delay-1">
+
+          <div class="about-story-card">
+            <h3>Our Purpose &amp; Vision</h3>
+            <p>At MAG Healthcare Solutions, we combine deep domain experience in hospital Revenue Cycle Management (RCM) with advanced healthcare data engineering. We empower healthcare providers across the UK and Middle East to eliminate revenue leakage, streamline clinical claim workflows, and make data-driven decisions that safeguard financial health.</p>
+            <p>Effective RCM requires far more than back-office billing—it demands end-to-end operational visibility, root-cause denial prevention, and automated reporting systems tailored to the complexities of modern healthcare systems.</p>
+          </div>
+
+          <div class="about-footprint-card">
+            <div class="footprint-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Global Enterprise Footprint
+            </div>
+            <div class="footprint-locations">
+              <div class="footprint-item">
+                <span class="footprint-flag">&#127468;&#127463;</span>
+                <div class="footprint-info">
+                  <h4>United Kingdom (Headquarters)</h4>
+                  <p>Strategic governance, compliance standards (HIPAA/GDPR), and executive analytics engineering.</p>
+                </div>
+              </div>
+              <div class="footprint-item">
+                <span class="footprint-flag">&#127466;&#127468;</span>
+                <div class="footprint-info">
+                  <h4>Egypt (Middle East Branch)</h4>
+                  <p>Regional client support, hospital workflow integration, and hands-on RCM audit teams.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Leadership & Core Capabilities Cards -->
+        <div class="leadership-grid reveal reveal-delay-2">
+
+          <div class="leadership-card">
+            <div class="leadership-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="leadership-card__tag">RCM Certified Leaders</span>
+            <h3>Certified Revenue Cycle Experts</h3>
+            <p>Our leadership team brings specialized certification and deep mastery in medical coding, claims adjudication, insurance contracts, and cash collection optimization.</p>
+          </div>
+
+          <div class="leadership-card">
+            <div class="leadership-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="15" y1="9" x2="15" y2="9.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="15" y1="13" x2="15" y2="13.01"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></svg>
+            </div>
+            <span class="leadership-card__tag">Hospital Floor Proven</span>
+            <h3>Operational Healthcare Expertise</h3>
+            <p>Built by professionals with years of hands-on experience inside hospital corridors, specialty clinics, and health systems — understanding clinical workflows from the inside out.</p>
+          </div>
+
+          <div class="leadership-card">
+            <div class="leadership-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span class="leadership-card__tag">Enterprise Data Systems</span>
+            <h3>Healthcare Data Analytics</h3>
+            <p>We transform raw EMR/HIS data feeds into executive Power BI dashboards, automated SQL/Python pipelines, and predictive denial models that drive measurable ROI.</p>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
     <!-- WHY US -->
@@ -2741,8 +2993,9 @@
           <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About Us &amp; Leadership</a></li>
             <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#tools">Technologies & Tools</a></li>
+            <li><a href="#tools">Technologies &amp; Tools</a></li>
           </ul>
         </div>
         <div class="footer-col">
