@@ -2563,19 +2563,11 @@
             <iframe
               src="https://drive.google.com/file/d/1e69z7klGz2tVmhr3X9Egrn6KfGeh6KjkmEqQTARBjgo/preview"
               style="width:100%; height:100%; border:none; display:block;"
-              allow="autoplay; encrypted-media"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
+              loading="lazy"
               title="MAG Healthcare Solutions Demo Video">
             </iframe>
-            <!-- Hide Google Drive external link button -->
-            <div style="
-              position: absolute;
-              top: 0; right: 0;
-              width: 60px; height: 60px;
-              background: #000;
-              z-index: 10;
-              border-radius: 0 1.25rem 0 0;
-            "></div>
           </div>
 
           <!-- Bottom badge row -->
@@ -2597,8 +2589,8 @@
             </span>
           </div>
 
-          <!-- CTA -->
-          <div style="text-align:center; margin-top: var(--space-8);">
+          <!-- CTAs -->
+          <div style="display:flex; align-items:center; justify-content:center; gap:var(--space-4); margin-top: var(--space-8); flex-wrap:wrap;">
             <a href="#contact" style="
               display: inline-flex; align-items: center; gap: var(--space-3);
               background: linear-gradient(135deg, #4db8bf, #006b72);
@@ -2613,6 +2605,22 @@
             onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px rgba(0,107,114,0.4)'">
               Request a Free Demo
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="https://drive.google.com/file/d/1e69z7klGz2tVmhr3X9Egrn6KfGeh6KjkmEqQTARBjgo/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="
+              display: inline-flex; align-items: center; gap: var(--space-2);
+              background: var(--color-surface);
+              color: var(--color-text);
+              border: 1px solid var(--color-border);
+              font-weight: 600; font-size: var(--text-sm);
+              padding: var(--space-3) var(--space-6);
+              border-radius: var(--radius-full);
+              transition: transform var(--transition), border-color var(--transition), background-color var(--transition);
+              text-decoration: none;
+            "
+            onmouseover="this.style.borderColor='var(--color-primary)';this.style.color='var(--color-primary)';this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.borderColor='var(--color-border)';this.style.color='var(--color-text)';this.style.transform=''">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Video on Google Drive (HD)
             </a>
           </div>
         </div>
